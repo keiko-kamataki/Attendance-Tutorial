@@ -1,3 +1,10 @@
-<% provide(:title, "") %>
-<h1>勤怠管理システム</h1>
-<p>このアプリケーションでは、登録されたユーザーの勤怠情報を閲覧・登録・編集することができます。</p>
+<% provide(:title, "Top") %>
+<div class= "center jumbotron"> 
+<!--center　領域に対し背景画像を縦横中央寄せで配置　ジャンボトロン　クラス-->
+  <h1>勤怠管理システム</h1>
+  <p>このアプリケーションでは、登録されたユーザーの勤怠情報を閲覧・登録・編集することができます。</p>
+  <%= link_to "sign up", '#', class: "btn btn-lg btn-primary" %>
+</div>
+  
+ <!--追記した、center jumbotron, btn, btn-lg, btn-primaryなどもBootstrapによってスタイルが当てられる-->  
+ <!--第2引数のURLにはルーティングヘルパーを割り当てるが、現状はWebデザインで一般的に使われるスタブ（とりあえずのダミー）用の#で置き換えておく -->

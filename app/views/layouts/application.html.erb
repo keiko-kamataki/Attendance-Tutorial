@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>  HTML5であることを宣言-->
 <html>
   <head>
     <title><%= full_title(yield(:title)) %></title>
@@ -7,9 +7,38 @@
                                'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application',
                                'data-turbolinks-track': 'reload' %>
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+      </script>
+    <![endif]-->
   </head>
-
+<!--第2引数のURLにはルーティングヘルパーを割り当てますが、現状はWebデザインで一般的に使われるスタブ（とりあえずのダミー）用の#で置き換えておきます-->
   <body>
-    <%= yield %>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+<!--サイトのロゴやリンクを表示するheader   3つのCSSクラス追加-->
+<!--HTML要素は全て、class（クラス）とid（アイディー）の両方を指定することが可能-->
+<!--これらはCSSでスタイルを指定する時に役立つ  -->
+<!--HTML要素に対して classはページ内で何度も使える-->
+　　　　　　　　　　　　<!--idはページ内で一度しか使えない-->
+      <div class="container">
+<!--containerというクラスもBootstrapによって意味が与えられます-->
+<!--divタグ（領域）の追加-->
+<!--divは一般的に表示領域を表し、要素を別々のパーツとして分ける時に使われる。header要素、nav要素、section要素-->
+        <%= link_to "Attendance App", '#', id: "logo" %>
+        <nav>
+<!--ナビゲーションバー（アプリヘッダー）の領域の追加-->
+          <ul class="nav navbar-nav navbar-right">
+<!--左三つクラスもBootstrapによってスタイルが当てられる-->            
+            <li><%= link_to "Top",   '#' %></li>
+            <li><%= link_to "Log in", '#' %></li>
+<!--divの内側、2番目の要素はulタグとliタグ（リストアイテムタグ）によって作れらたナビゲーションリンク-->
+<!--第2引数のURLにはルーティングヘルパーを割り当てるがWebデザインで一般的に使われるスタブ（とりあえずのダミー）用の#で置き換えて-->            
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
